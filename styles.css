@@ -19,6 +19,9 @@
 
   --accent: var(--beta);
 
+  /* stop-and-go easing lifted from this site's previous life (2022) */
+  --ease-surreal: cubic-bezier(0.67, 0.03, 0.31, 0.98);
+
   --display: "Bricolage Grotesque", system-ui, sans-serif;
   --body: "Archivo", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -121,8 +124,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   cursor: pointer;
   background: none;
   color: var(--text);
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.06s;
 }
+.btn:active { transform: translateY(1px); }
 .btn-solid { background: var(--text); color: var(--bg); border-color: var(--text); }
 .btn-solid:hover { background: var(--beta); border-color: var(--beta); color: var(--bg); }
 .btn-ghost:hover { border-color: var(--beta); color: var(--beta); }
@@ -150,7 +154,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 }
 .project:last-of-type { border-bottom: 1px solid var(--line); }
 
-.glyph svg { width: 110px; height: auto; overflow: visible; }
+.glyph svg { width: 110px; height: auto; overflow: visible; transition: transform 1.1s var(--ease-surreal); }
+.project:hover .glyph svg { transform: perspective(600px) rotate3d(1, 1, 0, 14deg) scale(1.03); }
 .glyph path, .glyph line { fill: none; stroke-width: 1.6; stroke-linecap: round; }
 .glyph-label { font-family: var(--mono); font-size: 8px; fill: var(--muted); }
 .glyph { filter: saturate(0.75); opacity: 0.85; transition: filter 0.3s, opacity 0.3s; }
@@ -161,7 +166,15 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   margin-right: 14px;
 }
-.project:hover h3 { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.project h3 a { text-decoration: none; }
+.project:hover h3 a { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.project h3 .ext {
+  display: inline-block;
+  font-size: 0.55em;
+  color: var(--muted);
+  transition: transform 0.7s var(--ease-surreal), color 0.3s;
+}
+.project:hover h3 .ext { transform: translate(3px, -3px); color: var(--accent); }
 .project-tag { display: inline-block; color: var(--accent); margin-bottom: 12px; }
 .project-body p { max-width: 44rem; }
 .stack { color: var(--muted); margin-top: 14px; }
@@ -203,7 +216,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   padding: 5px 13px;
   font-size: 0.78rem;
   color: #c9c3b8;
+  transition: background 0.35s var(--ease-surreal), color 0.35s var(--ease-surreal), border-color 0.35s var(--ease-surreal);
 }
+.chips li:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
 
 /* ---------- footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: clamp(60px, 10vh, 110px) var(--pad) 40px; }
@@ -225,7 +240,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   width: 100%; height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: spin 14s linear infinite;
+  animation: spin 12s var(--ease-surreal) infinite;
 }
 .face {
   position: absolute;
@@ -239,9 +254,12 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 .f-left   { background: rgba(240, 180, 80, 0.28); transform: rotateY(-90deg) translateZ(60px); }
 .f-top    { background: rgba(240, 117, 103, 0.28); transform: rotateX(90deg) translateZ(60px); }
 .f-bottom { background: rgba(237, 233, 227, 0.12); transform: rotateX(-90deg) translateZ(60px); }
+/* the original 2022 spin: lands, hesitates, tumbles on */
 @keyframes spin {
-  from { transform: rotate3d(1, 1, 0, 0deg); }
-  to   { transform: rotate3d(1, 1, 0, 360deg); }
+  0%      { transform: rotateX(-10deg) rotateY(0deg); }
+  33.333% { transform: rotateX(-35deg) rotateY(-45deg); }
+  66.666% { transform: rotateX(-35deg) rotateY(45deg); }
+  100%    { transform: rotateX(-10deg) rotateY(360deg); }
 }
 
 .stay {
@@ -280,6 +298,15 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 
 .colophon { text-align: center; }
 
+/* ---------- scroll reveal: sections unfold in shallow 3D ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: perspective(900px) rotate3d(1, 0, 0, 7deg) translateY(26px);
+  transform-origin: 50% 100%;
+  transition: opacity 0.9s var(--ease-surreal), transform 0.9s var(--ease-surreal);
+}
+[data-reveal].in { opacity: 1; transform: none; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 760px) {
   .project, .timeline li { grid-template-columns: 1fr; }
@@ -294,4 +321,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   html { scroll-behavior: auto; }
   .cube { animation: none; transform: rotate3d(1, 1, 0, 40deg); }
   .stay:hover::before, .stay:hover::after { animation: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .glyph svg, .project h3 .ext { transition: none; }
+  .project:hover .glyph svg { transform: none; }
 }

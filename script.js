@@ -118,3 +118,28 @@
       : '<span class="btn-icon">▶</span> hear this waveform';
   });
 })();
+
+/* Scroll reveal: below-the-fold blocks unfold as they enter.
+   The data-reveal attribute is added here, not in the HTML,
+   so nothing is hidden when JS is off. */
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const blocks = document.querySelectorAll(
+    '.project, .timeline li, .section-head, .about-grid, .skills, .also, .footer-inner'
+  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  blocks.forEach((el) => {
+    el.setAttribute('data-reveal', '');
+    io.observe(el);
+  });
+})();
