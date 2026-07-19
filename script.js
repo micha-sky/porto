@@ -143,11 +143,10 @@
       }
       return true;
     });
-    if (!pending.length) window.removeEventListener('scroll', onScroll);
+    if (!pending.length) window.removeEventListener('scroll', sweep);
   };
-  const onScroll = () => requestAnimationFrame(sweep);
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', sweep, { passive: true });
   window.addEventListener('load', sweep);
   sweep();
 })();
