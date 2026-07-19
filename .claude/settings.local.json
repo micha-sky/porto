@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mdfind -onlyin /Users/om/Downloads -onlyin /Users/om/Documents -onlyin /Users/om/Desktop 'kMDItemFSName == \"*cv*\"c || kMDItemFSName == \"*resume*\"c || kMDItemFSName == \"*lebenslauf*\"c')",
+      "Bash(grep -viE 'node_modules|\\\\.\\(js|ts|map|json|css\\)$')",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s https://unique-fudge-c794bc.netlify.app/)",
+      "Bash(mkdir -p /Users/om/Downloads/porto/assets && cp \"/Users/om/Downloads/CVs 2/CV_Mykhalskyi_Software_Engineer_EN.pdf\" /Users/om/Downloads/porto/assets/CV_Oleksandr_Mykhalskyi.pdf && ls -la /Users/om/Downloads/porto/assets)",
+      "Bash(curl -s -o /dev/null -w '%{http_code} %{size_download}b %{content_type}\\\\n' http://localhost:4173/assets/CV_Oleksandr_Mykhalskyi.pdf)",
+      "Bash(mdfind -onlyin /Users/om 'kMDItemFSName == \"*sanna*\"c')",
+      "Bash(mdfind -onlyin /Users/om 'kMDItemFSName == \"sannaleone\" || kMDItemFSName == \"unwohl\"')"
+    ]
+  }
+}
