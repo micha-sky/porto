@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oleksandr Mykhalskyi — software engineer, Hamburg</title>
-<meta name="description" content="Senior software engineer in Hamburg. Java & Python by day; brainwave music, synth archaeology and other signal problems by night.">
+<title>Oleksandr Mykhalskyi — code, signal, sound</title>
+<meta name="description" content="Engineer and sound artist in Germany. Production software, biofeedback instruments, and the pipelines between them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,8 +17,9 @@
   <a class="nav-name" href="#top">o.mykhalskyi</a>
   <nav class="nav-links">
     <a href="#work">work</a>
+    <a href="#symbiont">symbiont</a>
+    <a href="#statement">statement</a>
     <a href="#about">about</a>
-    <a href="#cv">cv</a>
     <a href="#contact">contact</a>
   </nav>
 </header>
@@ -29,11 +30,10 @@
   <section class="hero">
     <canvas id="waves" aria-hidden="true"></canvas>
     <div class="hero-inner">
-      <p class="eyebrow mono">Oleksandr Mykhalskyi · software engineer · Hamburg</p>
+      <p class="eyebrow mono">Oleksandr Mykhalskyi · engineer &amp; sound artist · Hamburg / Gießen</p>
       <h1>Signals in,<br>software out.</h1>
-      <p class="hero-sub">Ten years of Java &amp; Python in production — ad-tech, fintech, AI agents.
-      After hours: brainwaves that compose music, calendars painted by the weather,
-      and software that listens harder than it should.</p>
+      <p class="hero-sub">I build systems that listen — production software, biofeedback
+      instruments, and the pipelines between them.</p>
       <div class="hero-actions">
         <button id="sonify" class="btn btn-ghost mono" type="button">
           <span class="btn-icon">▶</span> hear this waveform
@@ -50,12 +50,17 @@
     </div>
   </section>
 
-  <!-- ============ WORK ============ -->
-  <section id="work" class="section">
+  <!-- ============ SYMBIONT ============ -->
+  <section id="symbiont" class="section">
     <div class="section-head">
-      <h2>Selected work</h2>
-      <p class="mono muted">four signal problems, solved for fun</p>
+      <h2>SYMBIONT</h2>
+      <p class="mono muted">human · plant · machine — one loop</p>
     </div>
+    <p class="lede">SYMBIONT is a biofeedback-driven spatial composition system:
+    EEG (Muse S), plant bioelectric sensing, and gestural control routed through
+    Ableton Live and custom Max for Live devices. The human performer is one node
+    among several living agents — a life-support loop where the music sustains
+    the system that generates it.</p>
 
     <article class="project" style="--accent: var(--alpha)">
       <div class="glyph" aria-hidden="true">
@@ -69,7 +74,7 @@
       </div>
       <div class="project-body">
         <h3><a href="https://playful-pony-05ebb1.netlify.app/" target="_blank" rel="noopener">braino<span class="ext" aria-hidden="true"> ↗</span></a></h3>
-        <p class="project-tag mono">EEG → music</p>
+        <p class="project-tag mono">an instrument within SYMBIONT — the EEG-to-sound engine, usable standalone in the browser</p>
         <p>Wear a Muse headband, think, and listen back. braino maps the five brainwave
         bands to oscillators, quantizes them to a musical scale, adds reverb and rhythm,
         and renders stereo audio — offline from a CSV, or live in the browser while
@@ -77,6 +82,15 @@
         <p class="stack mono">Python · DSP · WebAudio · OSC · FastAPI</p>
       </div>
     </article>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section id="work" class="section">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p class="mono muted">everything here converts one signal into another —
+      or builds tools so artists can keep making theirs</p>
+    </div>
 
     <article class="project" style="--accent: var(--theta)">
       <div class="glyph" aria-hidden="true">
@@ -156,13 +170,55 @@
       </div>
     </article>
 
+    <article class="project" style="--accent: var(--delta)">
+      <div class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 96 64">
+          <rect x="5" y="7" width="50" height="38" rx="2" fill="none" stroke="var(--delta)" stroke-width="1.6"/>
+          <rect x="40" y="19" width="50" height="38" rx="2" fill="none" stroke="var(--theta)" stroke-width="1.6" opacity=".7"/>
+          <path d="M11 38 q7 -16 14 -6 t13 -2" stroke="var(--delta)"/>
+          <circle cx="46" cy="15" r="2.5" fill="var(--delta)"/>
+          <path d="M47 50 q8 -12 16 -4 t14 -3" stroke="var(--theta)" opacity=".8"/>
+        </svg>
+      </div>
+      <div class="project-body">
+        <h3>artist sites</h3>
+        <p class="project-tag mono">built to order</p>
+        <p>Sites for working artists — <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a>
+        and <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a> —
+        designed and shipped end to end, from typography to deploy. The tools half of
+        the practice: other people's art needs infrastructure too.</p>
+        <p class="stack mono">design · build · host · maintain</p>
+      </div>
+    </article>
+
     <p class="also">
       <span class="mono muted">also:</span>
-      <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a> and
-      <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a> — artist sites built to order ·
       spotitube — Spotify ↔ YouTube playlist matching ·
       <a href="https://unique-fudge-c794bc.netlify.app" target="_blank" rel="noopener">this site's previous life</a> — CSS-transform surrealism, 2022
     </p>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section id="statement" class="section">
+    <div class="section-head">
+      <h2>Statement</h2>
+      <p class="mono muted">tikkun, in hardware</p>
+    </div>
+    <div class="statement">
+      <p>In the Kabbalistic tradition, Tikkun names the work of repair — the mending
+      of vessels that shattered because they could not hold the light passing through
+      them. I understand SYMBIONT as that work made literal: building a vessel of
+      sensors, signal, and sound sturdy enough to carry what moves through a living
+      system without breaking it. The circuit is a prayer wheel that happens to run
+      on electricity.</p>
+      <p>I come to this as a guitarist, in the lineage of biofeedback music — Lucier,
+      Rosenboom, Teitelbaum — but where that tradition asked what the body sounds like,
+      SYMBIONT asks what a symbiosis sounds like when the human ear is only one of
+      several nervous systems in the room. The apparatus is intentionally modest:
+      consumer hardware, off-the-shelf parts, mystic technology. An ongoing inquiry
+      into post-human authorship, repair as a compositional principle, and making
+      music with — rather than about — the living world.</p>
+    </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -173,89 +229,20 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm Oleksandr — Sasha to most people. Software engineer from Lviv, based in
-        Hamburg, with ten-plus years of shipping production systems: I migrated a legacy
-        PHP ad-tech API to Java microservices with zero downtime and 60% faster responses,
-        built the parcel-locker finder used across Germany, and mentored juniors along
-        the way.</p>
-        <p>These days at <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a> I build
-        AI agents that actually ship — RAG pipelines over Postgres + pgvector, MCP servers
-        with OAuth, chatbots that book real rooms in real co-working spaces.</p>
-        <p>The rest of the time I chase signals: EEG, weather, sound. Most of my side
-        projects are excuses to turn one of them into another.</p>
+        <p>I'm Oleksandr — Sasha to most people. Engineer and sound artist from Lviv,
+        based between Hamburg and Gießen. Ten years of production Java/Python; currently
+        building AI agents at <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a>.</p>
+        <p>All of it is one practice: take a signal — EEG, weather, sound, a room full
+        of people — and build the system that lets it speak.</p>
+        <p class="about-cta"><a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi.pdf" download>full CV (pdf) ↓</a></p>
       </div>
       <dl class="facts mono">
-        <div><dt>base</dt><dd>Hamburg, DE</dd></div>
+        <div><dt>base</dt><dd>Hamburg / Gießen, DE</dd></div>
         <div><dt>day job</dt><dd>Full-stack &amp; AI engineer, taliox GmbH</dd></div>
         <div><dt>degree</dt><dd>M.Sc. Computer Science, Lviv Polytechnic</dd></div>
         <div><dt>languages</dt><dd>Ukrainian · English · German</dd></div>
         <div><dt>github</dt><dd><a href="https://github.com/micha-sky" target="_blank" rel="noopener">micha-sky</a></dd></div>
       </dl>
-    </div>
-  </section>
-
-  <!-- ============ CV ============ -->
-  <section id="cv" class="section">
-    <div class="section-head">
-      <h2>CV</h2>
-      <a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi.pdf" download>download pdf ↓</a>
-    </div>
-
-    <ol class="timeline">
-      <li>
-        <p class="when mono">2024 — now</p>
-        <div>
-          <h3>Full-Stack Developer · taliox GmbH, Hamburg</h3>
-          <p>Community platform for digital hubs across Germany (Django); MS Dynamics
-          customization with direct client ownership; AI assistant with room-booking
-          actions and an OAuth MCP server; customer-support RAG agent with an eval
-          setup built from real user chats.</p>
-        </div>
-      </li>
-      <li>
-        <p class="when mono">2022 — 2024</p>
-        <div>
-          <h3>Senior Java Developer · SpearAd (Nexxen), Hamburg</h3>
-          <p>Migrated a legacy PHP API to Java microservices for an ad-tech platform —
-          60% faster responses, zero-downtime cutover. Designed the persistence layer
-          and owned the QA strategy for the migration.</p>
-        </div>
-      </li>
-      <li>
-        <p class="when mono">2021 — 2022</p>
-        <div>
-          <h3>Senior Java Developer · Netfonds Gruppe, Hamburg</h3>
-          <p>Java microservices for a B2B financial platform; mentored three juniors,
-          established code review practice, ran CI/CD and GCP/Kubernetes infrastructure.</p>
-        </div>
-      </li>
-      <li>
-        <p class="when mono">2017 — 2021</p>
-        <div>
-          <h3>Full-Stack Java Developer · ParcelLock GmbH, Hamburg</h3>
-          <p>Built the nationwide Paketstation Finder and owned its core API from design
-          to release; PayPal integration, B2B partner interface, security pen-testing.</p>
-        </div>
-      </li>
-      <li>
-        <p class="when mono">2014 — 2017</p>
-        <div>
-          <h3>Earlier &amp; freelance</h3>
-          <p>ML pipeline for predictive maintenance (Dutch Analytics) · nuclear-emergency
-          decision support at Karlsruhe Institute of Technology · co-founded a real-time
-          delivery-tracking startup · map-based hotel booking (ZoomAndGo, Canada).</p>
-        </div>
-      </li>
-    </ol>
-
-    <div class="skills">
-      <p class="mono muted">daily drivers</p>
-      <ul class="chips mono">
-        <li>Java</li><li>Python</li><li>TypeScript</li><li>Spring Boot</li><li>Django</li>
-        <li>React</li><li>PostgreSQL</li><li>Kafka</li><li>AWS</li><li>GCP</li>
-        <li>Kubernetes</li><li>Docker</li><li>LangChain</li><li>RAG / pgvector</li>
-        <li>MCP servers</li><li>Three.js</li>
-      </ul>
     </div>
   </section>
 
@@ -276,7 +263,7 @@
       </div>
     </div>
     <p class="stay mono" data-text="STAY SURREAL">STAY SURREAL</p>
-    <p class="colophon mono muted">Oleksandr Mykhalskyi · Hamburg · no cookies, no tracking, one cube</p>
+    <p class="colophon mono muted">Oleksandr Mykhalskyi · Hamburg / Gießen · no cookies, no tracking, one cube</p>
   </footer>
 
 </main>

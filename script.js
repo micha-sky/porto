@@ -127,7 +127,7 @@
   if (!('IntersectionObserver' in window)) return;
 
   const blocks = document.querySelectorAll(
-    '.project, .timeline li, .section-head, .about-grid, .skills, .also, .footer-inner'
+    '.project, .section-head, .lede, .statement, .about-grid, .also, .footer-inner'
   );
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
