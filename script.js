@@ -121,25 +121,33 @@
 
 /* Scroll reveal: below-the-fold blocks unfold as they enter.
    The data-reveal attribute is added here, not in the HTML,
-   so nothing is hidden when JS is off. */
+   so nothing is hidden when JS is off. A plain scroll sweep
+   instead of IntersectionObserver: anchor landings and scroll
+   restoration must reveal instantly, never wait on the observer. */
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!('IntersectionObserver' in window)) return;
 
-  const blocks = document.querySelectorAll(
+  const blocks = [...document.querySelectorAll(
     '.project, .section-head, .lede, .statement, .about-grid, .also, .footer-inner'
-  );
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  )];
+  blocks.forEach((el) => el.setAttribute('data-reveal', ''));
 
-  blocks.forEach((el) => {
-    el.setAttribute('data-reveal', '');
-    io.observe(el);
-  });
+  let pending = blocks.slice();
+  const sweep = () => {
+    if (!pending.length) return;
+    const limit = window.innerHeight - 40;
+    pending = pending.filter((el) => {
+      if (el.getBoundingClientRect().top < limit) {
+        el.classList.add('in');
+        return false;
+      }
+      return true;
+    });
+    if (!pending.length) window.removeEventListener('scroll', onScroll);
+  };
+  const onScroll = () => requestAnimationFrame(sweep);
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', sweep);
+  sweep();
 })();
