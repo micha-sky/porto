@@ -1,6 +1,7 @@
-/* Hero waveform: the five EEG bands from braino, drawn live.
+/* Hero waveform: five layered signals, drawn live.
    Cursor X speeds the signal up, cursor Y raises the amplitude.
-   The ▶ button sonifies the same five bands with WebAudio. */
+   The ▶ button sonifies the same five layers with WebAudio —
+   the frequencies spell an A-tuned chord (A1 · E2 · A2 · E3 · A3). */
 
 (() => {
   const canvas = document.getElementById('waves');
@@ -8,12 +9,12 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const css = getComputedStyle(document.documentElement);
-  const BANDS = [
-    { name: 'delta', color: css.getPropertyValue('--delta'), cycles: 2,  amp: 0.32, drift: 0.12, note: 55.0 },   // A1
-    { name: 'theta', color: css.getPropertyValue('--theta'), cycles: 3.5, amp: 0.24, drift: 0.19, note: 82.41 }, // E2
-    { name: 'alpha', color: css.getPropertyValue('--alpha'), cycles: 6,  amp: 0.18, drift: 0.27, note: 110.0 },  // A2
-    { name: 'beta',  color: css.getPropertyValue('--beta'),  cycles: 11, amp: 0.11, drift: 0.41, note: 164.81 }, // E3
-    { name: 'gamma', color: css.getPropertyValue('--gamma'), cycles: 19, amp: 0.06, drift: 0.63, note: 220.0 },  // A3
+  const WAVES = [
+    { name: 'iris',  color: css.getPropertyValue('--iris'),  cycles: 2,  amp: 0.32, drift: 0.12, note: 55.0 },   // A1
+    { name: 'sky',   color: css.getPropertyValue('--sky'),   cycles: 3.5, amp: 0.24, drift: 0.19, note: 82.41 }, // E2
+    { name: 'moss',  color: css.getPropertyValue('--moss'),  cycles: 6,  amp: 0.18, drift: 0.27, note: 110.0 },  // A2
+    { name: 'amber', color: css.getPropertyValue('--amber'), cycles: 11, amp: 0.11, drift: 0.41, note: 164.81 }, // E3
+    { name: 'coral', color: css.getPropertyValue('--coral'), cycles: 19, amp: 0.06, drift: 0.63, note: 220.0 },  // A3
   ];
 
   let w = 0, h = 0, dpr = 1;
@@ -50,7 +51,7 @@
     ctx.clearRect(0, 0, w, h);
     const boost = playing ? 1.25 : 1;
 
-    BANDS.forEach((b, i) => {
+    WAVES.forEach((b, i) => {
       const baseY = h * (0.30 + i * 0.11);
       ctx.beginPath();
       const steps = Math.ceil(w / 4);
@@ -84,13 +85,13 @@
     master.gain.value = 0;
     master.connect(ac.destination);
 
-    const voices = BANDS.map((b) => {
+    const voices = WAVES.map((b) => {
       const osc = ac.createOscillator();
       osc.type = 'sine';
       osc.frequency.value = b.note;
       const gain = ac.createGain();
       gain.gain.value = 0.05;
-      // slow per-band LFO so the chord swells like a real EEG trace
+      // slow per-voice LFO so the chord swells and breathes
       const lfo = ac.createOscillator();
       lfo.frequency.value = 0.06 + b.drift * 0.25;
       const lfoGain = ac.createGain();
@@ -128,7 +129,7 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const blocks = [...document.querySelectorAll(
-    '.project, .section-head, .lede, .statement, .about-grid, .also, .footer-inner'
+    '.project, .section-head, .about-grid, .also, .footer-inner'
   )];
   blocks.forEach((el) => el.setAttribute('data-reveal', ''));
 

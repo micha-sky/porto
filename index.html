@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oleksandr Mykhalskyi — code, signal, sound</title>
-<meta name="description" content="Engineer and sound artist in Germany. Production software, biofeedback instruments, and the pipelines between them.">
+<title>Oleksandr Mykhalskyi — full-stack &amp; AI engineer</title>
+<meta name="description" content="Full-stack and AI engineer in Germany. Production software, data pipelines, and tools that turn one signal into another.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,8 +17,6 @@
   <a class="nav-name" href="#top">o.mykhalskyi</a>
   <nav class="nav-links">
     <a href="#work">work</a>
-    <a href="#symbiont">symbiont</a>
-    <a href="#statement">statement</a>
     <a href="#about">about</a>
     <a href="#contact">contact</a>
   </nav>
@@ -30,58 +28,17 @@
   <section class="hero">
     <canvas id="waves" aria-hidden="true"></canvas>
     <div class="hero-inner">
-      <p class="eyebrow mono">Oleksandr Mykhalskyi · engineer &amp; sound artist · Hamburg / Gießen</p>
+      <p class="eyebrow mono">Oleksandr Mykhalskyi · full-stack &amp; AI engineer · Hamburg / Gießen</p>
       <h1>Signals in,<br>software out.</h1>
-      <p class="hero-sub">I build systems that listen — production software, biofeedback
-      instruments, and the pipelines between them.</p>
+      <p class="hero-sub">I build systems that listen — production software, data
+      pipelines, and the tools that turn one signal into another.</p>
       <div class="hero-actions">
         <button id="sonify" class="btn btn-ghost mono" type="button">
           <span class="btn-icon">▶</span> hear this waveform
         </button>
         <a class="btn btn-solid mono" href="#work">see the work ↓</a>
       </div>
-      <p class="hero-legend mono" aria-hidden="true">
-        <span style="--c:var(--delta)">δ delta</span>
-        <span style="--c:var(--theta)">θ theta</span>
-        <span style="--c:var(--alpha)">α alpha</span>
-        <span style="--c:var(--beta)">β beta</span>
-        <span style="--c:var(--gamma)">γ gamma</span>
-      </p>
     </div>
-  </section>
-
-  <!-- ============ SYMBIONT ============ -->
-  <section id="symbiont" class="section">
-    <div class="section-head">
-      <h2>SYMBIONT</h2>
-      <p class="mono muted">human · plant · machine — one loop</p>
-    </div>
-    <p class="lede">SYMBIONT is a biofeedback-driven spatial composition system:
-    EEG (Muse S), plant bioelectric sensing, and gestural control routed through
-    Ableton Live and custom Max for Live devices. The human performer is one node
-    among several living agents — a life-support loop where the music sustains
-    the system that generates it.</p>
-
-    <article class="project" style="--accent: var(--alpha)">
-      <div class="glyph" aria-hidden="true">
-        <svg viewBox="0 0 96 64">
-          <path d="M0 12 q12 -10 24 0 t24 0 t24 0 t24 0" stroke="var(--delta)"/>
-          <path d="M0 22 q8 -12 16 0 t16 0 t16 0 t16 0 t16 0 t16 0" stroke="var(--theta)"/>
-          <path d="M0 32 q6 -14 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0" stroke="var(--alpha)"/>
-          <path d="M0 42 q4 -10 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0" stroke="var(--beta)"/>
-          <path d="M0 52 q3 -7 6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0" stroke="var(--gamma)"/>
-        </svg>
-      </div>
-      <div class="project-body">
-        <h3><a href="https://playful-pony-05ebb1.netlify.app/" target="_blank" rel="noopener">braino<span class="ext" aria-hidden="true"> ↗</span></a></h3>
-        <p class="project-tag mono">an instrument within SYMBIONT — the EEG-to-sound engine, usable standalone in the browser</p>
-        <p>Wear a Muse headband, think, and listen back. braino maps the five brainwave
-        bands to oscillators, quantizes them to a musical scale, adds reverb and rhythm,
-        and renders stereo audio — offline from a CSV, or live in the browser while
-        the signal streams in over OSC.</p>
-        <p class="stack mono">Python · DSP · WebAudio · OSC · FastAPI</p>
-      </div>
-    </article>
   </section>
 
   <!-- ============ WORK ============ -->
@@ -92,43 +49,78 @@
       or builds tools so artists can keep making theirs</p>
     </div>
 
-    <article class="project" style="--accent: var(--theta)">
+    <article class="project" style="--accent: var(--sky)">
       <div class="glyph" aria-hidden="true">
         <svg viewBox="0 0 96 64">
-          <g class="cal">
-            <rect x="4"  y="6"  width="16" height="10" rx="2" fill="var(--theta)" opacity=".45"/>
-            <rect x="24" y="6"  width="16" height="10" rx="2" fill="var(--theta)" opacity=".7"/>
-            <rect x="44" y="6"  width="16" height="10" rx="2" fill="var(--alpha)" opacity=".6"/>
-            <rect x="64" y="6"  width="16" height="10" rx="2" fill="var(--beta)"  opacity=".6"/>
-            <rect x="4"  y="20" width="16" height="10" rx="2" fill="var(--beta)"  opacity=".8"/>
-            <rect x="24" y="20" width="16" height="10" rx="2" fill="var(--gamma)" opacity=".7"/>
-            <rect x="44" y="20" width="16" height="10" rx="2" fill="var(--gamma)" opacity=".45"/>
-            <rect x="64" y="20" width="16" height="10" rx="2" fill="var(--beta)"  opacity=".5"/>
-            <rect x="4"  y="34" width="16" height="10" rx="2" fill="var(--theta)" opacity=".5"/>
-            <rect x="24" y="34" width="16" height="10" rx="2" fill="var(--alpha)" opacity=".5"/>
-            <rect x="44" y="34" width="16" height="10" rx="2" fill="var(--theta)" opacity=".8"/>
-            <rect x="64" y="34" width="16" height="10" rx="2" fill="var(--delta)" opacity=".6"/>
-            <rect x="4"  y="48" width="76" height="10" rx="2" fill="none" stroke="var(--line)" stroke-width="1"/>
-          </g>
+          <line x1="6" y1="54" x2="90" y2="54" stroke="var(--line)"/>
+          <path d="M14 16 L82 16" stroke="var(--line)" stroke-dasharray="3 3"/>
+          <rect x="12" y="30" width="10" height="24" rx="1.5" fill="var(--sky)"  opacity=".8"/>
+          <rect x="26" y="20" width="10" height="34" rx="1.5" fill="var(--sky)"  opacity=".55"/>
+          <rect x="46" y="38" width="10" height="16" rx="1.5" fill="var(--moss)" opacity=".9"/>
+          <rect x="60" y="26" width="10" height="28" rx="1.5" fill="var(--sky)"  opacity=".5"/>
+          <rect x="74" y="34" width="10" height="20" rx="1.5" fill="var(--sky)"  opacity=".7"/>
+          <text x="48" y="12" class="glyph-label" text-anchor="middle">€</text>
         </svg>
       </div>
       <div class="project-body">
-        <h3><a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">kalendarski<span class="ext" aria-hidden="true"> ↗</span></a></h3>
-        <p class="project-tag mono">weather → color</p>
-        <p>A macOS-style calendar where the background is an hour-by-hour temperature
-        heatmap — your week, painted by the forecast. Night hours cool into blue,
-        afternoons burn toward red, and the gradient shifts as the weather does.</p>
-        <p class="stack mono">React · TypeScript · Vite · OpenWeatherMap</p>
+        <h3>supermaker</h3>
+        <p class="project-tag mono">weekly Angebote → price history</p>
+        <p>Follows the weekly offers across the big German chains — REWE, Lidl, ALDI
+        and the rest — plus the organic Biomärkte, tracks the products you actually buy,
+        and shows how each price moves over time. A quiet personal tool so you never
+        overpay for the same yoghurt twice.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> pulling offers
+        from two undocumented sources — an unofficial leaflet API and the internal
+        page-data JSON behind a Gatsby site — through one pluggable adapter interface,
+        and running the slow, rate-limited daily fetch as a CI job because a stateful app
+        with a database doesn't fit the serverless model it deploys onto.</p>
+        <p class="stack mono">Next.js · TypeScript · Drizzle · SQLite / Turso · GitHub Actions</p>
+        <p class="project-links mono">
+          <a href="https://github.com/micha-sky/supermaker" target="_blank" rel="noopener">repo ↗</a>
+        </p>
       </div>
     </article>
 
-    <article class="project" style="--accent: var(--gamma)">
+    <article class="project" style="--accent: var(--amber)">
       <div class="glyph" aria-hidden="true">
         <svg viewBox="0 0 96 64">
-          <path d="M4 56 L18 10 L34 34 L60 34 Q78 34 90 56" stroke="var(--gamma)" fill="none"/>
-          <circle cx="18" cy="10" r="3" fill="var(--gamma)"/>
-          <circle cx="34" cy="34" r="3" fill="var(--gamma)"/>
-          <circle cx="60" cy="34" r="3" fill="var(--gamma)"/>
+          <line x1="4" y1="32" x2="92" y2="32" stroke="var(--line)"/>
+          <circle cx="14" cy="32" r="3.5" fill="var(--amber)"/>
+          <circle cx="30" cy="32" r="2.5" fill="var(--amber)" opacity=".7"/>
+          <circle cx="41" cy="32" r="4.5" fill="var(--amber)"/>
+          <circle cx="58" cy="32" r="2.5" fill="var(--amber)" opacity=".5"/>
+          <circle cx="71" cy="32" r="3.5" fill="var(--amber)" opacity=".8"/>
+          <circle cx="86" cy="32" r="2.5" fill="var(--amber)" opacity=".4"/>
+          <text x="8"  y="16" class="glyph-label">new</text>
+          <text x="60" y="52" class="glyph-label">deadline</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <h3><a href="https://artsyfier.netlify.app/" target="_blank" rel="noopener">artemator<span class="ext" aria-hidden="true"> ↗</span></a></h3>
+        <p class="project-tag mono">open calls → one dashboard</p>
+        <p>Scrapes art-funding open calls from a dozen sources, dedupes them, guesses
+        region and type, flags what's new and tracks deadlines. A GitHub Action refreshes
+        it daily and redeploys — a site that maintains itself so artists can spend the
+        time applying instead of searching.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> keeping a dozen
+        mismatched RSS and HTML sources deduped and self-checking with nobody watching.
+        A source that silently starts returning zero has to announce itself on a health
+        strip, not just quietly vanish from the results.</p>
+        <p class="stack mono">Python · SQLite · GitHub Actions · Netlify</p>
+        <p class="project-links mono">
+          <a href="https://artsyfier.netlify.app/" target="_blank" rel="noopener">live ↗</a>
+          <a href="https://github.com/micha-sky/artemator" target="_blank" rel="noopener">repo ↗</a>
+        </p>
+      </div>
+    </article>
+
+    <article class="project" style="--accent: var(--coral)">
+      <div class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 96 64">
+          <path d="M4 56 L18 10 L34 34 L60 34 Q78 34 90 56" stroke="var(--coral)" fill="none"/>
+          <circle cx="18" cy="10" r="3" fill="var(--coral)"/>
+          <circle cx="34" cy="34" r="3" fill="var(--coral)"/>
+          <circle cx="60" cy="34" r="3" fill="var(--coral)"/>
           <text x="6"  y="63" class="glyph-label">A</text>
           <text x="30" y="63" class="glyph-label">D</text>
           <text x="48" y="63" class="glyph-label">S</text>
@@ -141,43 +133,97 @@
         <p>Name a track — <em>Windowlicker</em>, <em>Da Funk</em>, anything — and it
         works out which synths probably made those sounds and how you'd patch them
         yourself. Music-nerd archaeology, powered by an LLM behind a serverless API.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> getting an LLM
+        to return structured, trustworthy patch data through a stateless serverless
+        function, and degrading gracefully when the model gives you something you can't
+        use instead of showing the user a stack trace.</p>
         <p class="stack mono">React · Netlify Functions · Claude API</p>
+        <p class="project-links mono">
+          <a href="https://synth-detective.netlify.app/" target="_blank" rel="noopener">live ↗</a>
+          <a href="https://github.com/micha-sky/synth-detective" target="_blank" rel="noopener">repo ↗</a>
+        </p>
       </div>
     </article>
 
-    <article class="project" style="--accent: var(--beta)">
+    <article class="project" style="--accent: var(--moss)">
       <div class="glyph" aria-hidden="true">
         <svg viewBox="0 0 96 64">
-          <line x1="4" y1="32" x2="92" y2="32" stroke="var(--line)"/>
-          <circle cx="14" cy="32" r="3.5" fill="var(--beta)"/>
-          <circle cx="30" cy="32" r="2.5" fill="var(--beta)" opacity=".7"/>
-          <circle cx="41" cy="32" r="4.5" fill="var(--beta)"/>
-          <circle cx="58" cy="32" r="2.5" fill="var(--beta)" opacity=".5"/>
-          <circle cx="71" cy="32" r="3.5" fill="var(--beta)" opacity=".8"/>
-          <circle cx="86" cy="32" r="2.5" fill="var(--beta)" opacity=".4"/>
-          <text x="8"  y="16" class="glyph-label">new</text>
-          <text x="60" y="52" class="glyph-label">deadline</text>
+          <rect x="6"  y="10" width="30" height="6" rx="3" fill="var(--moss)" opacity=".8"/>
+          <rect x="6"  y="22" width="30" height="6" rx="3" fill="var(--moss)" opacity=".55"/>
+          <rect x="6"  y="34" width="30" height="6" rx="3" fill="var(--moss)" opacity=".7"/>
+          <rect x="6"  y="46" width="30" height="6" rx="3" fill="var(--moss)" opacity=".4"/>
+          <rect x="60" y="10" width="30" height="6" rx="3" fill="var(--sky)"  opacity=".7"/>
+          <rect x="60" y="22" width="30" height="6" rx="3" fill="var(--sky)"  opacity=".8"/>
+          <rect x="60" y="34" width="30" height="6" rx="3" fill="var(--sky)"  opacity=".45"/>
+          <rect x="60" y="46" width="30" height="6" rx="3" fill="var(--sky)"  opacity=".6"/>
+          <path d="M40 31 L55 31" stroke="var(--moss)"/>
+          <path d="M49 26 L56 31 L49 36" stroke="var(--moss)" fill="none"/>
         </svg>
       </div>
       <div class="project-body">
-        <h3><a href="https://artsyfier.netlify.app/" target="_blank" rel="noopener">artemator<span class="ext" aria-hidden="true"> ↗</span></a></h3>
-        <p class="project-tag mono">open calls → one dashboard</p>
-        <p>Scrapes art-funding open calls from a dozen sources, dedupes them, guesses
-        region and type, flags what's new and tracks deadlines. A GitHub Action refreshes
-        it daily and redeploys — a site that maintains itself so artists can spend the
-        time applying instead of searching.</p>
-        <p class="stack mono">Python · SQLite · GitHub Actions · Netlify</p>
+        <h3>spotitube</h3>
+        <p class="project-tag mono">liked songs → local mp3s</p>
+        <p>Reads your Spotify Liked Songs, then goes and finds each one on YouTube and
+        pulls it down as an MP3. A small command-line pipeline for keeping an offline,
+        portable copy of a library that only ever lives in someone else's cloud.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> matching a Spotify
+        library to YouTube with no shared identifiers. Fuzzy search hits, wrong-length
+        uploads and live versions all have to be filtered down to the one right audio
+        match — and the whole thing stays testable, with a fully mocked suite that needs
+        no network or credentials.</p>
+        <p class="stack mono">Python · Spotify API · yt-dlp · pytest</p>
+        <p class="project-links mono">
+          <a href="https://github.com/micha-sky/spotitube" target="_blank" rel="noopener">repo ↗</a>
+        </p>
       </div>
     </article>
 
-    <article class="project" style="--accent: var(--delta)">
+    <article class="project" style="--accent: var(--sky)">
       <div class="glyph" aria-hidden="true">
         <svg viewBox="0 0 96 64">
-          <rect x="5" y="7" width="50" height="38" rx="2" fill="none" stroke="var(--delta)" stroke-width="1.6"/>
-          <rect x="40" y="19" width="50" height="38" rx="2" fill="none" stroke="var(--theta)" stroke-width="1.6" opacity=".7"/>
-          <path d="M11 38 q7 -16 14 -6 t13 -2" stroke="var(--delta)"/>
-          <circle cx="46" cy="15" r="2.5" fill="var(--delta)"/>
-          <path d="M47 50 q8 -12 16 -4 t14 -3" stroke="var(--theta)" opacity=".8"/>
+          <g class="cal">
+            <rect x="4"  y="6"  width="16" height="10" rx="2" fill="var(--sky)"   opacity=".45"/>
+            <rect x="24" y="6"  width="16" height="10" rx="2" fill="var(--sky)"   opacity=".7"/>
+            <rect x="44" y="6"  width="16" height="10" rx="2" fill="var(--moss)"  opacity=".6"/>
+            <rect x="64" y="6"  width="16" height="10" rx="2" fill="var(--amber)" opacity=".6"/>
+            <rect x="4"  y="20" width="16" height="10" rx="2" fill="var(--amber)" opacity=".8"/>
+            <rect x="24" y="20" width="16" height="10" rx="2" fill="var(--coral)" opacity=".7"/>
+            <rect x="44" y="20" width="16" height="10" rx="2" fill="var(--coral)" opacity=".45"/>
+            <rect x="64" y="20" width="16" height="10" rx="2" fill="var(--amber)" opacity=".5"/>
+            <rect x="4"  y="34" width="16" height="10" rx="2" fill="var(--sky)"   opacity=".5"/>
+            <rect x="24" y="34" width="16" height="10" rx="2" fill="var(--moss)"  opacity=".5"/>
+            <rect x="44" y="34" width="16" height="10" rx="2" fill="var(--sky)"   opacity=".8"/>
+            <rect x="64" y="34" width="16" height="10" rx="2" fill="var(--iris)"  opacity=".6"/>
+            <rect x="4"  y="48" width="76" height="10" rx="2" fill="none" stroke="var(--line)" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+      <div class="project-body">
+        <h3><a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">kalendarski<span class="ext" aria-hidden="true"> ↗</span></a></h3>
+        <p class="project-tag mono">weather → color</p>
+        <p>A macOS-style calendar where the background is an hour-by-hour temperature
+        heatmap — your week, painted by the forecast. Night hours cool into blue,
+        afternoons burn toward red, and the gradient shifts as the weather does.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> repainting the
+        whole calendar from live hourly forecasts without hammering the API. The weather
+        is cached and interpolated between fetches, so the gradient stays smooth instead
+        of stepping every time a request lands.</p>
+        <p class="stack mono">React · TypeScript · Vite · OpenWeatherMap</p>
+        <p class="project-links mono">
+          <a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">live ↗</a>
+          <a href="https://github.com/micha-sky/kalendarski" target="_blank" rel="noopener">repo ↗</a>
+        </p>
+      </div>
+    </article>
+
+    <article class="project" style="--accent: var(--iris)">
+      <div class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 96 64">
+          <rect x="5" y="7" width="50" height="38" rx="2" fill="none" stroke="var(--iris)" stroke-width="1.6"/>
+          <rect x="40" y="19" width="50" height="38" rx="2" fill="none" stroke="var(--sky)" stroke-width="1.6" opacity=".7"/>
+          <path d="M11 38 q7 -16 14 -6 t13 -2" stroke="var(--iris)"/>
+          <circle cx="46" cy="15" r="2.5" fill="var(--iris)"/>
+          <path d="M47 50 q8 -12 16 -4 t14 -3" stroke="var(--sky)" opacity=".8"/>
         </svg>
       </div>
       <div class="project-body">
@@ -186,39 +232,24 @@
         <p>Sites for working artists — <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a>
         and <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a> —
         designed and shipped end to end, from typography to deploy. The tools half of
-        the practice: other people's art needs infrastructure too.</p>
+        the practice: other people's work needs infrastructure too.</p>
+        <p class="hard"><span class="mono muted">the hard part —</span> owning the whole
+        chain for someone who can't debug it. Design, build, host and maintain a site a
+        non-technical client can trust to just stay up, long after handover.</p>
         <p class="stack mono">design · build · host · maintain</p>
+        <p class="project-links mono">
+          <a href="https://github.com/micha-sky/konstantinunwohl.com" target="_blank" rel="noopener">unwohl repo ↗</a>
+          <span class="muted">sannaleone.com — private repo, happy to walk through it</span>
+        </p>
       </div>
     </article>
 
     <p class="also">
       <span class="mono muted">also:</span>
-      spotitube — Spotify ↔ YouTube playlist matching ·
+      <a href="https://github.com/micha-sky/mp3-tagger" target="_blank" rel="noopener">mp3-tagger</a> — fills in missing ID3 tags on youtube-dl rips, spotitube's little sibling ·
+      <a href="https://lotto-winner.netlify.app/" target="_blank" rel="noopener">lotto-winner</a> — a static toy ·
       <a href="https://unique-fudge-c794bc.netlify.app" target="_blank" rel="noopener">this site's previous life</a> — CSS-transform surrealism, 2022
     </p>
-  </section>
-
-  <!-- ============ STATEMENT ============ -->
-  <section id="statement" class="section">
-    <div class="section-head">
-      <h2>Statement</h2>
-      <p class="mono muted">tikkun, in hardware</p>
-    </div>
-    <div class="statement">
-      <p>In the Kabbalistic tradition, Tikkun names the work of repair — the mending
-      of vessels that shattered because they could not hold the light passing through
-      them. I understand SYMBIONT as that work made literal: building a vessel of
-      sensors, signal, and sound sturdy enough to carry what moves through a living
-      system without breaking it. The circuit is a prayer wheel that happens to run
-      on electricity.</p>
-      <p>I come to this as a guitarist, in the lineage of biofeedback music — Lucier,
-      Rosenboom, Teitelbaum — but where that tradition asked what the body sounds like,
-      SYMBIONT asks what a symbiosis sounds like when the human ear is only one of
-      several nervous systems in the room. The apparatus is intentionally modest:
-      consumer hardware, off-the-shelf parts, mystic technology. An ongoing inquiry
-      into post-human authorship, repair as a compositional principle, and making
-      music with — rather than about — the living world.</p>
-    </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -229,16 +260,16 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm Oleksandr — Sasha to most people. Engineer and sound artist from Lviv,
-        based between Hamburg and Gießen. Ten years of production Java/Python; currently
-        building AI agents at <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a>.</p>
-        <p>All of it is one practice: take a signal — EEG, weather, sound, a room full
-        of people — and build the system that lets it speak.</p>
-        <p class="about-cta"><a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi.pdf" download>full CV (pdf) ↓</a></p>
+        <p>I'm Oleksandr — Sasha to most people. Engineer from Lviv, based between
+        Hamburg and Gießen. Ten years of production Java/Python; currently building
+        AI agents at <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a>.</p>
+        <p>All of it is one practice: take a signal — weather, sound, a room full of
+        people — and build the system that lets it speak.</p>
+        <p class="about-cta"><a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi_Engineering.pdf" download>full CV (pdf) ↓</a></p>
       </div>
       <dl class="facts mono">
         <div><dt>base</dt><dd>Hamburg / Gießen, DE</dd></div>
-        <div><dt>day job</dt><dd>Full-stack &amp; AI engineer, taliox GmbH</dd></div>
+        <div><dt>role</dt><dd>Full-stack &amp; AI engineer, taliox GmbH</dd></div>
         <div><dt>degree</dt><dd>M.Sc. Computer Science, Lviv Polytechnic</dd></div>
         <div><dt>languages</dt><dd>Ukrainian · English · German</dd></div>
         <div><dt>github</dt><dd><a href="https://github.com/micha-sky" target="_blank" rel="noopener">micha-sky</a></dd></div>

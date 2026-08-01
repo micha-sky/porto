@@ -1,7 +1,7 @@
 /* ============================================================
    Oleksandr Mykhalskyi — portfolio
-   concept: "signals" — EEG band colors carry the whole system
-   δ delta / θ theta / α alpha / β beta / γ gamma
+   concept: "signals" — a five-color palette carries the whole
+   system, one accent per piece of work
    ============================================================ */
 
 :root {
@@ -11,13 +11,13 @@
   --muted: #8f887c;
   --line: rgba(237, 233, 227, 0.14);
 
-  --delta: #9b8cff;
-  --theta: #62b6f0;
-  --alpha: #7fd08a;
-  --beta:  #f0b450;
-  --gamma: #f07567;
+  --iris:  #9b8cff;
+  --sky:   #62b6f0;
+  --moss:  #7fd08a;
+  --amber: #f0b450;
+  --coral: #f07567;
 
-  --accent: var(--beta);
+  --accent: var(--amber);
 
   /* stop-and-go easing lifted from this site's previous life (2022) */
   --ease-surreal: cubic-bezier(0.67, 0.03, 0.31, 0.98);
@@ -50,9 +50,9 @@ a:hover { color: var(--accent); }
 
 h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 
-:focus-visible { outline: 2px solid var(--beta); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
 
-::selection { background: var(--beta); color: var(--bg); }
+::selection { background: var(--amber); color: var(--bg); }
 
 /* ---------- nav ---------- */
 .nav {
@@ -101,18 +101,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   margin-bottom: 26px;
 }
 .hero-sub { max-width: 34rem; color: var(--muted); margin-bottom: 34px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 42px; }
-
-.hero-legend { display: flex; gap: 18px; flex-wrap: wrap; }
-.hero-legend span { color: var(--muted); }
-.hero-legend span::before {
-  content: "";
-  display: inline-block;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--c);
-  margin-right: 7px;
-}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -128,8 +117,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 }
 .btn:active { transform: translateY(1px); }
 .btn-solid { background: var(--text); color: var(--bg); border-color: var(--text); }
-.btn-solid:hover { background: var(--beta); border-color: var(--beta); color: var(--bg); }
-.btn-ghost:hover { border-color: var(--beta); color: var(--beta); }
+.btn-solid:hover { background: var(--amber); border-color: var(--amber); color: var(--bg); }
+.btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
 .btn-icon { display: inline-block; width: 1em; }
 
 /* ---------- sections ---------- */
@@ -179,6 +168,19 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 .project-body p { max-width: 44rem; }
 .stack { color: var(--muted); margin-top: 14px; }
 
+/* the one constraint that made each project non-trivial */
+.hard {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
+}
+.hard .mono { color: var(--muted); margin-right: 4px; }
+
+/* live / repo affordances */
+.project-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; }
+.project-links a { color: var(--text); text-decoration-color: var(--accent); }
+.project-links a:hover { color: var(--accent); }
+
 .also { margin-top: 34px; max-width: 54rem; color: var(--muted); font-size: 0.95rem; }
 .also a { color: var(--text); }
 
@@ -189,16 +191,11 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   gap: clamp(28px, 6vw, 80px);
 }
 .about-text p + p { margin-top: 1em; }
+.about-cta { margin-top: 28px; }
 .facts { border-left: 1px solid var(--line); padding-left: clamp(18px, 3vw, 36px); align-self: start; }
 .facts div { margin-bottom: 18px; }
 .facts dt { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; }
 .facts dd { margin-top: 3px; }
-
-/* ---------- symbiont / statement prose ---------- */
-.lede { max-width: 46rem; margin-bottom: clamp(28px, 5vh, 48px); }
-.statement { max-width: 46rem; }
-.statement p + p { margin-top: 1em; }
-.about-cta { margin-top: 28px; }
 
 /* ---------- footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: clamp(60px, 10vh, 110px) var(--pad) 40px; }
@@ -259,13 +256,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
   overflow: hidden;
 }
 .stay:hover::before {
-  color: var(--gamma);
+  color: var(--coral);
   transform: translate(-2px, -1px);
   clip-path: inset(0 0 55% 0);
   animation: jitter 0.35s steps(2) infinite;
 }
 .stay:hover::after {
-  color: var(--theta);
+  color: var(--sky);
   transform: translate(2px, 1px);
   clip-path: inset(55% 0 0 0);
   animation: jitter 0.35s steps(2) infinite reverse;
