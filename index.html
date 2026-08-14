@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Oleksandr Mykhalskyi — full-stack &amp; AI engineer</title>
-<meta name="description" content="Full-stack and AI engineer in Germany. Production software, data pipelines, and tools that turn one signal into another.">
+<title>Oleksandr Mykhalskyi · full-stack &amp; AI engineer</title>
+<meta name="description" content="Full-stack and AI engineer based in Germany. Production software, AI agents, data pipelines, and a handful of side projects about sound.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,8 +30,8 @@
     <div class="hero-inner">
       <p class="eyebrow mono">Oleksandr Mykhalskyi · full-stack &amp; AI engineer · Hamburg / Gießen</p>
       <h1>I turn signals<br>into systems.</h1>
-      <p class="hero-sub">Production software, AI agents, data pipelines — and the
-      tools that turn one signal into another.</p>
+      <p class="hero-sub">Production software, AI agents, data pipelines. Plus the odd
+      tool that turns one kind of signal into another.</p>
       <div class="hero-actions">
         <button id="sonify" class="btn btn-ghost mono" type="button">
           <span class="btn-icon">▶</span> hear this waveform
@@ -45,8 +45,8 @@
   <section id="work" class="section">
     <div class="section-head">
       <h2>Selected work</h2>
-      <p class="mono muted">everything here converts one signal into another —
-      or builds tools so artists can keep making theirs</p>
+      <p class="mono muted">most of this converts one signal into another. the rest
+      is tools, so artists can keep making theirs</p>
     </div>
 
     <article class="project" style="--accent: var(--sky)">
@@ -65,15 +65,15 @@
       <div class="project-body">
         <h3>supermaker</h3>
         <p class="project-tag mono">weekly Angebote → price history</p>
-        <p>Follows the weekly offers across the big German chains — REWE, Lidl, ALDI
-        and the rest — plus the organic Biomärkte, tracks the products you actually buy,
-        and shows how each price moves over time. A quiet personal tool so you never
-        overpay for the same yoghurt twice.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> pulling offers
-        from two undocumented sources — an unofficial leaflet API and the internal
-        page-data JSON behind a Gatsby site — through one pluggable adapter interface,
-        and running the slow, rate-limited daily fetch as a CI job because a stateful app
-        with a database doesn't fit the serverless model it deploys onto.</p>
+        <p>Follows the weekly offers at REWE, Lidl, ALDI and the rest, plus the organic
+        Biomärkte. You tell it which products you actually buy and it charts what each
+        one costs week to week. Mostly so I stop paying twice as much for the same
+        yoghurt.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> two undocumented
+        sources, an unofficial leaflet API and the page-data JSON sitting behind a Gatsby
+        site, both had to come through one pluggable adapter. The daily fetch is slow and
+        rate-limited, so it runs as a CI job instead. A stateful app with a database
+        doesn't fit the serverless model underneath it.</p>
         <p class="stack mono">Next.js · TypeScript · Drizzle · SQLite / Turso · GitHub Actions</p>
         <p class="project-links mono">
           <a href="https://github.com/micha-sky/supermaker" target="_blank" rel="noopener">repo ↗</a>
@@ -99,13 +99,13 @@
         <h3><a href="https://artsyfier.netlify.app/" target="_blank" rel="noopener">artemator<span class="ext" aria-hidden="true"> ↗</span></a></h3>
         <p class="project-tag mono">open calls → one dashboard</p>
         <p>Scrapes art-funding open calls from a dozen sources, dedupes them, guesses
-        region and type, flags what's new and tracks deadlines. A GitHub Action refreshes
-        it daily and redeploys — a site that maintains itself so artists can spend the
-        time applying instead of searching.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> keeping a dozen
-        mismatched RSS and HTML sources deduped and self-checking with nobody watching.
-        A source that silently starts returning zero has to announce itself on a health
-        strip, not just quietly vanish from the results.</p>
+        region and type, flags what's new, tracks deadlines. A GitHub Action refreshes it
+        every morning and redeploys. The whole point is that artists spend their evenings
+        applying rather than searching.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> a dozen mismatched
+        RSS and HTML feeds, deduped and self-checking, with nobody watching. When one of
+        them quietly starts returning zero results it has to say so on the health strip.
+        A silent source looks exactly like a slow week.</p>
         <p class="stack mono">Python · SQLite · GitHub Actions · Netlify</p>
         <p class="project-links mono">
           <a href="https://artsyfier.netlify.app/" target="_blank" rel="noopener">live ↗</a>
@@ -130,13 +130,13 @@
       <div class="project-body">
         <h3><a href="https://synth-detective.netlify.app/" target="_blank" rel="noopener">synth detective<span class="ext" aria-hidden="true"> ↗</span></a></h3>
         <p class="project-tag mono">track → patch notes</p>
-        <p>Name a track — <em>Windowlicker</em>, <em>Da Funk</em>, anything — and it
-        works out which synths probably made those sounds and how you'd patch them
-        yourself. Music-nerd archaeology, powered by an LLM behind a serverless API.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> getting an LLM
-        to return structured, trustworthy patch data through a stateless serverless
-        function, and degrading gracefully when the model gives you something you can't
-        use instead of showing the user a stack trace.</p>
+        <p>Name a track (<em>Windowlicker</em>, <em>Da Funk</em>, whatever) and it works
+        out which synths probably made those sounds, then tells you how to patch them
+        yourself. Music-nerd archaeology with an LLM behind a serverless API.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> getting structured,
+        trustworthy patch data out of an LLM through a stateless function. And when the
+        model hands back something unusable, which it does, the app has to fail into
+        something readable rather than a stack trace.</p>
         <p class="stack mono">React · Netlify Functions · Claude API</p>
         <p class="project-links mono">
           <a href="https://synth-detective.netlify.app/" target="_blank" rel="noopener">live ↗</a>
@@ -163,14 +163,14 @@
       <div class="project-body">
         <h3>spotitube</h3>
         <p class="project-tag mono">liked songs → local mp3s</p>
-        <p>Reads your Spotify Liked Songs, then goes and finds each one on YouTube and
-        pulls it down as an MP3. A small command-line pipeline for keeping an offline,
-        portable copy of a library that only ever lives in someone else's cloud.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> matching a Spotify
-        library to YouTube with no shared identifiers. Fuzzy search hits, wrong-length
-        uploads and live versions all have to be filtered down to the one right audio
-        match — and the whole thing stays testable, with a fully mocked suite that needs
-        no network or credentials.</p>
+        <p>Reads your Spotify Liked Songs, finds each one on YouTube, pulls it down as an
+        MP3. A small command-line pipeline for keeping an offline copy of a library that
+        otherwise only ever lives in someone else's cloud.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> matching a Spotify
+        library to YouTube when the two share no identifiers. Fuzzy hits, wrong-length
+        uploads, live versions, all of it has to be filtered down to the one correct audio
+        match. It stays testable too, with a fully mocked suite that needs no network and
+        no credentials.</p>
         <p class="stack mono">Python · Spotify API · yt-dlp · pytest</p>
         <p class="project-links mono">
           <a href="https://github.com/micha-sky/spotitube" target="_blank" rel="noopener">repo ↗</a>
@@ -201,13 +201,13 @@
       <div class="project-body">
         <h3><a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">kalendarski<span class="ext" aria-hidden="true"> ↗</span></a></h3>
         <p class="project-tag mono">weather → color</p>
-        <p>A macOS-style calendar where the background is an hour-by-hour temperature
-        heatmap — your week, painted by the forecast. Night hours cool into blue,
-        afternoons burn toward red, and the gradient shifts as the weather does.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> repainting the
-        whole calendar from live hourly forecasts without hammering the API. The weather
-        is cached and interpolated between fetches, so the gradient stays smooth instead
-        of stepping every time a request lands.</p>
+        <p>A macOS-style calendar whose background is an hour-by-hour temperature heatmap.
+        Your week, painted by the forecast. Night hours go blue, afternoons run red, and
+        the whole grid repaints as the weather changes.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> repainting the
+        calendar from live hourly forecasts without hammering the API. Weather gets cached
+        and interpolated between fetches, which keeps the gradient smooth instead of
+        stepping every time a request lands.</p>
         <p class="stack mono">React · TypeScript · Vite · OpenWeatherMap</p>
         <p class="project-links mono">
           <a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">live ↗</a>
@@ -229,26 +229,26 @@
       <div class="project-body">
         <h3>artist sites</h3>
         <p class="project-tag mono">built to order</p>
-        <p>Sites for working artists — <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a>
-        and <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a> —
-        designed and shipped end to end, from typography to deploy. The tools half of
-        the practice: other people's work needs infrastructure too.</p>
-        <p class="hard"><span class="mono muted">the hard part —</span> owning the whole
-        chain for someone who can't debug it. Design, build, host and maintain a site a
-        non-technical client can trust to just stay up, long after handover.</p>
+        <p>Sites for working artists: <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a>
+        and <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a>,
+        designed and shipped end to end, typography through deploy. This is the tools half
+        of the practice. Other people's work needs infrastructure too.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> owning the whole
+        chain for someone who can't debug it. Design, build, host, maintain, and then have
+        the thing keep working for a non-technical client long after handover.</p>
         <p class="stack mono">design · build · host · maintain</p>
         <p class="project-links mono">
           <a href="https://github.com/micha-sky/konstantinunwohl.com" target="_blank" rel="noopener">unwohl repo ↗</a>
-          <span class="muted">sannaleone.com — private repo, happy to walk through it</span>
+          <span class="muted">sannaleone.com is a private repo, happy to walk through it</span>
         </p>
       </div>
     </article>
 
     <p class="also">
       <span class="mono muted">also:</span>
-      <a href="https://github.com/micha-sky/mp3-tagger" target="_blank" rel="noopener">mp3-tagger</a> — fills in missing ID3 tags on youtube-dl rips, spotitube's little sibling ·
-      <a href="https://lotto-winner.netlify.app/" target="_blank" rel="noopener">lotto-winner</a> — a static toy ·
-      <a href="https://unique-fudge-c794bc.netlify.app" target="_blank" rel="noopener">this site's previous life</a> — CSS-transform surrealism, 2022
+      <a href="https://github.com/micha-sky/mp3-tagger" target="_blank" rel="noopener">mp3-tagger</a> (fills in missing ID3 tags on youtube-dl rips, spotitube's little sibling) ·
+      <a href="https://lotto-winner.netlify.app/" target="_blank" rel="noopener">lotto-winner</a> (a static toy) ·
+      <a href="https://unique-fudge-c794bc.netlify.app" target="_blank" rel="noopener">this site's previous life</a> (CSS-transform surrealism, 2022)
     </p>
   </section>
 
@@ -260,25 +260,25 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm Oleksandr — Sasha to most people. Engineer from Lviv, based between
-        Hamburg and Gießen. Ten years of production Java and Python behind me; today I
-        design and ship AI agents at
-        <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a> — LLM
-        systems built to be reliable, not just impressive.</p>
+        <p>I'm Oleksandr. Sasha to most people. Engineer from Lviv, living between
+        Hamburg and Gießen. Ten years of production Java and Python behind me. These days
+        I design and ship AI agents at
+        <a href="https://taliox.io" target="_blank" rel="noopener">taliox</a>, where the
+        job is making LLM systems that hold up once real users get to them.</p>
         <p>Before the web work I was a research engineer on <strong>JRODOS</strong>,
-        the EU's nuclear-emergency decision-support system — a doctoral researcher
+        the EU's nuclear-emergency decision-support system, as a doctoral researcher
         (аспірант) at the Institute of Mathematical Machines and Systems (NASU, Kyiv)
-        under Mark Zheleznyak. I built the engineering layer around the hydrological
-        models: Java plugins, model wrappers and GIS pipelines for radionuclide
-        transport in rivers — Chernobyl contamination maps, the Niida catchment for the
-        Fukushima group, and a real-time exchange that pushed WRF forecasts between
-        Ukraine and Romania for transboundary flood warning on the Prut. The
-        dissertation never got finished; the engineering instinct did.</p>
-        <p>That's the through-line. Every project here takes a signal — weather, a
-        river, sound, a room full of people — and builds the system that lets it speak.
-        The waveform up top isn't decoration: hit
-        <span class="mono">▶ hear this waveform</span> and the page plays its own moving
-        signal back as audio. Sound is part of the practice, not a garnish.</p>
+        under Mark Zheleznyak. My part was the engineering layer around the hydrological
+        models: Java plugins, model wrappers, GIS pipelines for radionuclide transport
+        in rivers. Chernobyl contamination maps. The Niida catchment for the Fukushima
+        group. A real-time exchange pushing WRF forecasts between Ukraine and Romania so
+        the Prut could be watched for transboundary flooding. I never finished the
+        dissertation. The engineering stayed.</p>
+        <p>That's the thread, more or less. Most of what's here starts with a signal
+        (weather, a river, a track, a shopping list) and ends up as a system that does
+        something with it. The waveform at the top of the page works the same way: hit
+        <span class="mono">▶ hear this waveform</span> and it plays itself back as audio.
+        Sound has always been half of why I build any of this.</p>
         <p class="about-cta"><a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi_Engineering.pdf" download>full CV (pdf) ↓</a></p>
       </div>
       <dl class="facts mono">
@@ -286,7 +286,7 @@
         <div><dt>role</dt><dd>Full-stack &amp; AI engineer, taliox GmbH</dd></div>
         <div><dt>focus</dt><dd>AI agents · LLM systems · full-stack</dd></div>
         <div><dt>degree</dt><dd>M.Sc. Information Security, Lviv Polytechnic</dd></div>
-        <div><dt>research</dt><dd>PhD research (unfinished) — JRODOS, IMMSP / NASU Kyiv</dd></div>
+        <div><dt>research</dt><dd>PhD research (unfinished), JRODOS at IMMSP / NASU Kyiv</dd></div>
         <div><dt>languages</dt><dd>Ukrainian · English · German</dd></div>
         <div><dt>github</dt><dd><a href="https://github.com/micha-sky" target="_blank" rel="noopener">micha-sky</a></dd></div>
       </dl>
