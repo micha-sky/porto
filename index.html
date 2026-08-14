@@ -49,6 +49,46 @@
       is tools, so artists can keep making theirs</p>
     </div>
 
+    <article class="project" style="--accent: var(--iris)">
+      <div class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 96 64">
+          <path d="M0 32 q24 -20 48 0 t48 0" stroke="var(--line)" stroke-dasharray="3 3"/>
+          <path d="M4 32 q11 -15 22 0 t22 0 t22 0 t22 0" stroke="var(--iris)" opacity=".85"/>
+          <path d="M4 32 q6 -10 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0" stroke="var(--sky)" opacity=".7"/>
+          <path d="M4 32 q3 -6 6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0" stroke="var(--moss)" opacity=".5"/>
+          <text x="4"  y="62" class="glyph-label">δ</text>
+          <text x="86" y="62" class="glyph-label">γ</text>
+          <text x="36" y="10" class="glyph-label">7.83</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <h3>braino</h3>
+        <p class="project-tag mono">brainwaves → one instrument</p>
+        <p>A Muse headband reads delta through gamma off four electrodes. Those five
+        numbers become oscillator frequencies, get snapped to a scale, summed to stereo
+        and sent through a reverb tail. So far that's a synthesizer. What makes it braino
+        is what else is allowed to reach the same knobs: a river gauge, the Schumann
+        resonance, satellites passing overhead, solar wind, a fungus.</p>
+        <p>The 7.83 Hz standing wave in the cavity between the earth and the ionosphere
+        sits inside the alpha band of a human brain. So when a live cavity reading bends
+        the tuning table the notes are derived from, nothing is being compared to
+        anything. The person and the planet are running through the same oscillator. Same
+        band stream also renders to canvas, so a session comes out as sound and as an
+        image of the same minutes.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> phase continuity.
+        Frequency is interpolated up to audio rate and integrated rather than restarted
+        per segment, so an hour of drifting EEG arrives as one unbroken tone instead of a
+        chain of clicks. Then the patchbay: source, destination, depth and mode are all
+        runtime decisions, and structural targets read your base slider value instead of
+        the already-modulated one. Modulation bends around the setting rather than
+        compounding against it, and pulling a cable heals it back.</p>
+        <p class="stack mono">Python · NumPy · Muse EEG · three.js · NOAA / KiwiSDR feeds</p>
+        <p class="project-links mono">
+          <span class="muted">private repo, happy to walk through it</span>
+        </p>
+      </div>
+    </article>
+
     <article class="project" style="--accent: var(--sky)">
       <div class="glyph" aria-hidden="true">
         <svg viewBox="0 0 96 64">
@@ -275,7 +315,7 @@
         the Prut could be watched for transboundary flooding. I never finished the
         dissertation. The engineering stayed.</p>
         <p>That's the thread, more or less. Most of what's here starts with a signal
-        (weather, a river, a track, a shopping list) and ends up as a system that does
+        (weather, a river, a brain, a shopping list) and ends up as a system that does
         something with it. The waveform at the top of the page works the same way: hit
         <span class="mono">▶ hear this waveform</span> and it plays itself back as audio.
         Sound has always been half of why I build any of this.</p>

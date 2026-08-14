@@ -166,6 +166,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 .project:hover h3 .ext { transform: translate(3px, -3px); color: var(--accent); }
 .project-tag { display: inline-block; color: var(--accent); margin-bottom: 12px; }
 .project-body p { max-width: 44rem; }
+.project-body p + p { margin-top: 14px; }
 .stack { color: var(--muted); margin-top: 14px; }
 
 /* the one constraint that made each project non-trivial */
