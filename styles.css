@@ -147,6 +147,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; }
 .project:hover .glyph svg { transform: perspective(600px) rotate3d(1, 1, 0, 14deg) scale(1.03); }
 .glyph path, .glyph line { fill: none; stroke-width: 1.6; stroke-linecap: round; }
 .glyph-label { font-family: var(--mono); font-size: 8px; fill: var(--muted); }
+/* the roadside-pylon price, tenth-of-a-cent digit raised (tanker) */
+.glyph-price { font-family: var(--mono); font-size: 13px; fill: var(--amber); }
 .glyph { filter: saturate(0.75); opacity: 0.85; transition: filter 0.3s, opacity 0.3s; }
 .project:hover .glyph { filter: saturate(1.2); opacity: 1; }
 
