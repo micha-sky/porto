@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Oleksandr Mykhalskyi · full-stack &amp; AI engineer</title>
 <meta name="description" content="Full-stack and AI engineer based in Germany. Production software, AI agents, data pipelines, and a handful of side projects about sound.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oleksandr Mykhalskyi &middot; full-stack &amp; AI engineer">
+<meta property="og:description" content="Production software, AI agents, data pipelines, and a handful of side projects about sound.">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -70,19 +74,62 @@
         is what else is allowed to reach the same knobs: a river gauge, the Schumann
         resonance, satellites passing overhead, solar wind, a fungus.</p>
         <p>The 7.83 Hz standing wave in the cavity between the earth and the ionosphere
-        sits inside the alpha band of a human brain. So when a live cavity reading bends
-        the tuning table the notes are derived from, nothing is being compared to
-        anything. The person and the planet are running through the same oscillator. Same
-        band stream also renders to canvas, so a session comes out as sound and as an
-        image of the same minutes.</p>
+        sits inside the alpha band of a human brain. Feed a live cavity reading into the
+        tuning table the notes are derived from and the person and the planet end up
+        bending the same note. The same band stream also draws to canvas, so a session
+        leaves behind a recording and a picture of itself.</p>
         <p class="hard"><span class="mono muted">the hard part:</span> phase continuity.
-        Frequency is interpolated up to audio rate and integrated rather than restarted
-        per segment, so an hour of drifting EEG arrives as one unbroken tone instead of a
-        chain of clicks. Then the patchbay: source, destination, depth and mode are all
-        runtime decisions, and structural targets read your base slider value instead of
-        the already-modulated one. Modulation bends around the setting rather than
-        compounding against it, and pulling a cable heals it back.</p>
+        Frequency is interpolated up to audio rate and integrated, never restarted per
+        segment, so an hour of drifting EEG arrives as one unbroken tone. Restart it and
+        you get a chain of clicks. Then the patchbay: source, destination, depth and mode
+        are all runtime decisions, and structural targets read your base slider value, not
+        the already-modulated one, so modulation bends around a setting without
+        compounding against it. Pull the cable and the value heals back.</p>
         <p class="stack mono">Python · NumPy · Muse EEG · three.js · NOAA / KiwiSDR feeds</p>
+        <p class="project-links mono">
+          <span class="muted">private repo, happy to walk through it</span>
+        </p>
+      </div>
+    </article>
+
+    <article class="project" style="--accent: var(--amber)">
+      <div class="glyph" aria-hidden="true">
+        <svg viewBox="0 0 96 64">
+          <circle cx="72" cy="36" r="20" fill="none" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="72" cy="36" r="3" fill="var(--amber)"/>
+          <circle cx="60" cy="27" r="2.2" fill="var(--amber)" opacity=".6"/>
+          <circle cx="84" cy="45" r="2.2" fill="var(--amber)" opacity=".6"/>
+          <circle cx="66" cy="50" r="2.2" fill="var(--amber)" opacity=".35"/>
+          <line x1="28" y1="34" x2="28" y2="58" stroke="var(--line)"/>
+          <line x1="18" y1="58" x2="38" y2="58" stroke="var(--line)"/>
+          <rect x="4" y="6" width="48" height="28" rx="2" fill="none" stroke="var(--amber)" stroke-width="1.6"/>
+          <text x="9"  y="26" class="glyph-price">1,67</text>
+          <text x="41" y="17" class="glyph-label">9</text>
+        </svg>
+      </div>
+      <div class="project-body">
+        <h3>tanker</h3>
+        <p class="project-tag mono">pump prices → where to stop</p>
+        <p>German stations report every price change to a federal office, MTS-K, and it
+        comes back out as a firehose of numbers. Tanker turns that into one screen: which
+        station in your radius is cheapest right now. No account, no notifications, no
+        second tab. It also does the arithmetic nobody does standing at a pump. A cheaper
+        station four kilometres off your route costs you the fuel you burn driving there
+        and back, so every candidate reduces to one euro figure for a full tank. Often the
+        honest answer is take the nearest one, and the app says that out loud.</p>
+        <p class="hard"><span class="mono muted">the hard part:</span> the upstream API
+        allows one request per minute, and that budget belongs to the key, so every
+        visitor to the site is spending the same minute. The fix is geographic:
+        coordinates snap to a 1.1 km grid before they become a cache key, which collapses
+        a whole neighbourhood onto a single upstream call. Real distances are recomputed
+        client-side from your true position, so the snapping never reaches the screen.
+        Concurrent misses coalesce into one fetch. If upstream is down, the last good
+        response is served with its age on it.</p>
+        <p>The licence writes part of the UI. Closed stations stay in the list at their
+        true rank, marked; nothing is filtered or reordered unless you touched a control;
+        there is no such thing as a promoted station. Price alerts would need background
+        polling, which is what gets a free key deactivated, so the app has none.</p>
+        <p class="stack mono">React · TypeScript · Vite · Netlify Functions · Netlify Blobs · MTS-K / Tankerkönig</p>
         <p class="project-links mono">
           <span class="muted">private repo, happy to walk through it</span>
         </p>
@@ -112,8 +159,8 @@
         <p class="hard"><span class="mono muted">the hard part:</span> two undocumented
         sources, an unofficial leaflet API and the page-data JSON sitting behind a Gatsby
         site, both had to come through one pluggable adapter. The daily fetch is slow and
-        rate-limited, so it runs as a CI job instead. A stateful app with a database
-        doesn't fit the serverless model underneath it.</p>
+        rate-limited, so it lives in a CI job: a stateful app with a database was never
+        going to fit the serverless model underneath it.</p>
         <p class="stack mono">Next.js · TypeScript · Drizzle · SQLite / Turso · GitHub Actions</p>
         <p class="project-links mono">
           <a href="https://github.com/micha-sky/supermaker" target="_blank" rel="noopener">repo ↗</a>
@@ -140,8 +187,8 @@
         <p class="project-tag mono">open calls → one dashboard</p>
         <p>Scrapes art-funding open calls from a dozen sources, dedupes them, guesses
         region and type, flags what's new, tracks deadlines. A GitHub Action refreshes it
-        every morning and redeploys. The whole point is that artists spend their evenings
-        applying rather than searching.</p>
+        every morning and redeploys. The searching was always the part that ate the
+        evening.</p>
         <p class="hard"><span class="mono muted">the hard part:</span> a dozen mismatched
         RSS and HTML feeds, deduped and self-checking, with nobody watching. When one of
         them quietly starts returning zero results it has to say so on the health strip.
@@ -175,8 +222,8 @@
         yourself. Music-nerd archaeology with an LLM behind a serverless API.</p>
         <p class="hard"><span class="mono muted">the hard part:</span> getting structured,
         trustworthy patch data out of an LLM through a stateless function. And when the
-        model hands back something unusable, which it does, the app has to fail into
-        something readable rather than a stack trace.</p>
+        model hands back something unusable, which it does, the failure has to land as a
+        sentence a person can read.</p>
         <p class="stack mono">React · Netlify Functions · Claude API</p>
         <p class="project-links mono">
           <a href="https://synth-detective.netlify.app/" target="_blank" rel="noopener">live ↗</a>
@@ -245,9 +292,9 @@
         Your week, painted by the forecast. Night hours go blue, afternoons run red, and
         the whole grid repaints as the weather changes.</p>
         <p class="hard"><span class="mono muted">the hard part:</span> repainting the
-        calendar from live hourly forecasts without hammering the API. Weather gets cached
-        and interpolated between fetches, which keeps the gradient smooth instead of
-        stepping every time a request lands.</p>
+        calendar from live hourly forecasts without hammering the API. Weather is cached
+        and interpolated between fetches, so the gradient drifts across the week; a fetch
+        per repaint would make it step.</p>
         <p class="stack mono">React · TypeScript · Vite · OpenWeatherMap</p>
         <p class="project-links mono">
           <a href="https://kalendarski.netlify.app/" target="_blank" rel="noopener">live ↗</a>
@@ -272,7 +319,7 @@
         <p>Sites for working artists: <a href="https://sannaleone.com" target="_blank" rel="noopener">sannaleone.com</a>
         and <a href="https://unwohl.com" target="_blank" rel="noopener">unwohl.com</a>,
         designed and shipped end to end, typography through deploy. This is the tools half
-        of the practice. Other people's work needs infrastructure too.</p>
+        of the practice.</p>
         <p class="hard"><span class="mono muted">the hard part:</span> owning the whole
         chain for someone who can't debug it. Design, build, host, maintain, and then have
         the thing keep working for a non-technical client long after handover.</p>
@@ -314,11 +361,12 @@
         group. A real-time exchange pushing WRF forecasts between Ukraine and Romania so
         the Prut could be watched for transboundary flooding. I never finished the
         dissertation. The engineering stayed.</p>
-        <p>That's the thread, more or less. Most of what's here starts with a signal
-        (weather, a river, a brain, a shopping list) and ends up as a system that does
-        something with it. The waveform at the top of the page works the same way: hit
-        <span class="mono">▶ hear this waveform</span> and it plays itself back as audio.
-        Sound has always been half of why I build any of this.</p>
+        <p>That's the thread, more or less. Nearly everything here starts with a signal
+        (weather, a river, a brain, this week's Angebote) and ends as something you can
+        read off a screen or hear. The waveform at the top of the page is the short
+        version: hit <span class="mono">▶ hear this waveform</span> and the five lines
+        you're looking at play back as a chord. The sound work has its own site,
+        <a href="https://oleksandrmykhalskyi.com" target="_blank" rel="noopener">oleksandrmykhalskyi.com</a>.</p>
         <p class="about-cta"><a class="btn btn-solid mono" href="assets/CV_Oleksandr_Mykhalskyi_Engineering.pdf" download>full CV (pdf) ↓</a></p>
       </div>
       <dl class="facts mono">
@@ -328,6 +376,7 @@
         <div><dt>degree</dt><dd>M.Sc. Information Security, Lviv Polytechnic</dd></div>
         <div><dt>research</dt><dd>PhD research (unfinished), JRODOS at IMMSP / NASU Kyiv</dd></div>
         <div><dt>languages</dt><dd>Ukrainian · English · German</dd></div>
+        <div><dt>sound</dt><dd><a href="https://oleksandrmykhalskyi.com" target="_blank" rel="noopener">oleksandrmykhalskyi.com</a></dd></div>
         <div><dt>github</dt><dd><a href="https://github.com/micha-sky" target="_blank" rel="noopener">micha-sky</a></dd></div>
       </dl>
     </div>
